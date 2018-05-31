@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image:
+    ports:
+     - "80:80"
+    volumes:
+     - .:/code
+  redis:
+    image: "redis:alpine"
