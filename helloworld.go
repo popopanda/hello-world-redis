@@ -37,14 +37,15 @@ func getValue(keyID string, client *redis.Client) string {
 	value, err := client.Get(keyID).Result()
 
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("error: ", err)
 	}
 
 	fmt.Printf("%v: %v\n", keyID, value)
 	return value
 }
+
 func main() {
 	sessionClient := newClient()
 	setValue("mykey", sessionClient)
-	getValue("myKey", sessionClient)
+	getValue("mykey", sessionClient)
 }
