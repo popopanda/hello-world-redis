@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"time"
 
 	"github.com/go-redis/redis"
 )
@@ -48,4 +49,5 @@ func main() {
 	sessionClient := newClient()
 	setValue("mykey", sessionClient)
 	getValue("mykey", sessionClient)
+	time.Sleep(5 * time.Minute)
 }
